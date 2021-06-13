@@ -16,6 +16,10 @@ typedef uint64_t ulong;
 namespace math {
 	constexpr static float PI = 3.14159265359f, E = 2.71828182846f;
 	static float EPSILON = .0001f;
+	
+	// Set value of EPSILON
+	// EPSILON is level of precision between value comparisons
+	static void setEpsilon(const float f) { EPSILON = f; }
 
 	// Absolute value of t
 	template<typename T>
@@ -31,8 +35,8 @@ namespace math {
 	template<typename A, typename B>
 	static const A& max(const A& a, const B& b) { return a > b ? a : b; }
 
-	// Restrict a between hi and lo
-	// types may vary
+	// Restrict a between lo and hi
+	// Types may vary
 	template<typename A, typename B, typename C>
 	static const A& clamp(const A& a, const B& lo, const C& hi) {
 		// If a > hi then use hi
@@ -72,17 +76,13 @@ namespace math {
 
 	// Distance between points (x1, y1) and (x2, y2)
 	template<typename A, typename B, typename C, typename D>
-	static A dist(const A& x1, const B& y1, const A& x2, const B& y2) {
+	static A dist(const A& x1, const B& y1, const C& x2, const D& y2) {
 		const A x = x1 - x2;		// x distance
 		const B y = y1 - y2;		// y distance
 		return sqrt(x * x + y * y); // sqrt(x^2 + y^2)
 	}
 
-	// Set value of EPSILON
-	// EPSILON is level of precision in order to be considered equal
-	static void setEpsilon(float f) { EPSILON = f; }
-
-	// Test if t is 0 +-EPSILON
+	// Test if t is 0 +- EPSILON
 	template<typename T>
 	static bool isZero(const T& t ) { return abs(t) <= EPSILON; }
 
@@ -103,20 +103,20 @@ namespace math {
 	static uint arrSize(const T(&arr)[N]) { return N * sizeof(T); }
 
 	// Convert reference string to all lowercase
-	static void toLower(std::string& s) {
+	static void tolower(std::string& s) {
 		for(uint i = 0; i < s.size(); i++)
-			s[i] = tolower(s[i]);
+			s[i] = std::tolower(s[i]);
 	}
 
 	// Test if strings a and b are equal, ignoring case
 	static bool equalsIgnoreCase(const std::string& a, const std::string& b) {
-		if (a.size() != b.size()) return false;
+		if (a.size() != b.size()) return false;	// Test if sizes match
 		
-		// Loop over every character
+		// Test if every character matches each other
 		for(uint i = 0; i < a.size(); i++)
 			// Convert both characters to lowercase
 			// If not equal, the strings are not equal
-			if(tolower(a[i] != tolower(b[i]))) return false;
+			if(std::tolower(a[i]) != std::tolower(b[i])) return false;
 		
 		return true;
 	}
