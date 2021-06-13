@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0A063326265967F90092257C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A063325265967F90092257C /* main.cpp */; };
-		0A063335265968AD0092257C /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A063333265968AD0092257C /* libglfw3.a */; };
-		0A063336265968AD0092257C /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A063334265968AD0092257C /* libGLEW.a */; };
 		0A063339265969470092257C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A063338265969470092257C /* Cocoa.framework */; };
 		0A06333B2659694F0092257C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A06333A2659694F0092257C /* OpenGL.framework */; };
 		0A06333D265969550092257C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A06333C265969550092257C /* IOKit.framework */; };
 		0A06333F2659695D0092257C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A06333E2659695D0092257C /* CoreVideo.framework */; };
+		0A81F31A26756052007EACD3 /* pch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A81F31926756052007EACD3 /* pch.cpp */; };
+		0A81F31B26756F06007EACD3 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A063334265968AD0092257C /* libGLEW.a */; };
+		0A81F31F26756F1A007EACD3 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A81F31D26756F10007EACD3 /* libglfw3.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,12 @@
 		0A06333A2659694F0092257C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		0A06333C265969550092257C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		0A06333E2659695D0092257C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		0A81F31726755F82007EACD3 /* All.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
+		0A81F31826756004007EACD3 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		0A81F31926756052007EACD3 /* pch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pch.cpp; sourceTree = "<group>"; };
+		0A81F31D26756F10007EACD3 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
+		0A81F31E26756F10007EACD3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGLEW.a; sourceTree = "<group>"; };
+		0A8FBF82265BE76D00425435 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,12 +55,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A81F31B26756F06007EACD3 /* libGLEW.a in Frameworks */,
 				0A06333F2659695D0092257C /* CoreVideo.framework in Frameworks */,
 				0A06333D265969550092257C /* IOKit.framework in Frameworks */,
 				0A06333B2659694F0092257C /* OpenGL.framework in Frameworks */,
 				0A063339265969470092257C /* Cocoa.framework in Frameworks */,
-				0A063336265968AD0092257C /* libGLEW.a in Frameworks */,
-				0A063335265968AD0092257C /* libglfw3.a in Frameworks */,
+				0A81F31F26756F1A007EACD3 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +70,8 @@
 		0A063319265967F90092257C = {
 			isa = PBXGroup;
 			children = (
+				0A81F31626755F40007EACD3 /* math */,
+				0A8FBF82265BE76D00425435 /* README.md */,
 				0A06332D265968780092257C /* deps */,
 				0A063324265967F90092257C /* src */,
 				0A063323265967F90092257C /* Products */,
@@ -83,6 +92,7 @@
 			children = (
 				0A063325265967F90092257C /* main.cpp */,
 				0A06332C265968630092257C /* pch.h */,
+				0A81F31926756052007EACD3 /* pch.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -118,12 +128,32 @@
 		0A063337265969470092257C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A81F31C26756F10007EACD3 /* lib */,
 				0A06333E2659695D0092257C /* CoreVideo.framework */,
 				0A06333C265969550092257C /* IOKit.framework */,
 				0A06333A2659694F0092257C /* OpenGL.framework */,
 				0A063338265969470092257C /* Cocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A81F31626755F40007EACD3 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				0A81F31726755F82007EACD3 /* All.h */,
+				0A81F31826756004007EACD3 /* Core.h */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		0A81F31C26756F10007EACD3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				0A81F31D26756F10007EACD3 /* libglfw3.a */,
+				0A81F31E26756F10007EACD3 /* libGLEW.a */,
+			);
+			name = lib;
+			path = deps/lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A063326265967F90092257C /* main.cpp in Sources */,
+				0A81F31A26756052007EACD3 /* pch.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,13 +334,17 @@
 		0A06332A265967F90092257C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				EXCLUDED_SOURCE_FILE_NAMES = "$(PROJECT_DIR)/deps/*";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/src/pch.h";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/deps/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/deps/include",
+					"$(PROJECT_DIR)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/deps/lib",
@@ -322,13 +357,17 @@
 		0A06332B265967F90092257C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				EXCLUDED_SOURCE_FILE_NAMES = "$(PROJECT_DIR)/deps/*";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/src/pch.h";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/deps/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/deps/include",
+					"$(PROJECT_DIR)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/deps/lib",
