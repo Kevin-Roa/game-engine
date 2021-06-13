@@ -2,9 +2,10 @@
 
 > An OpenGL based game engine made by following an ACM workshop. 
 
-## Technologies Used
-
+## What I Learned
+- C++
+	- Const correctness
+	- Templates
 - OpenGL
-	- GLEW
-	- GLFW
-
+	- Using GLEW and GLFW
+	
