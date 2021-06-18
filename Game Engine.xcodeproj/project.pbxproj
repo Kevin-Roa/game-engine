@@ -48,6 +48,8 @@
 		0A81F31D26756F10007EACD3 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
 		0A81F31E26756F10007EACD3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGLEW.a; sourceTree = "<group>"; };
 		0A8FBF82265BE76D00425435 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0ABD128A267A9FE600A8CE6D /* Vec2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vec2.h; sourceTree = "<group>"; };
+		0ABD128B267AA71300A8CE6D /* Range.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,8 @@
 			children = (
 				0A81F31726755F82007EACD3 /* All.h */,
 				0A81F31826756004007EACD3 /* Core.h */,
+				0ABD128A267A9FE600A8CE6D /* Vec2.h */,
+				0ABD128B267AA71300A8CE6D /* Range.h */,
 			);
 			path = math;
 			sourceTree = "<group>";
