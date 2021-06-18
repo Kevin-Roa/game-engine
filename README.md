@@ -1,11 +1,14 @@
 # Game Engine
 
-> An OpenGL based game engine made by following an ACM workshop. 
+> An OpenGL based C++ game engine made by following an ACM workshop by Hayden Allen.
+
+## Features
 
 ## What I Learned
 - C++
-	- Const correctness
-	- Templates
+    - Const correctness
+    - Templates
+    - lvalues vs rvalues
 - OpenGL
-	- Using GLEW and GLFW
+    - Using GLEW and GLFW
 	
